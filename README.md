@@ -2,7 +2,7 @@
 
 # Pigeon
 
-> A Golang cross-chain message relayer system 
+> A Golang cross-chain message relayer system
 > for Paloma validators to deliver messages to any blockchain.
 
 For Crosschain software engineers that want simultaneous control of mulitiple smart contracts, on any blockchain, Paloma is decentralized and consensus-driven message delivery, fast state awareness, low cost state computation, and powerful attestation system that enables scaleable, crosschain, smart contract execution with any data source.
@@ -54,7 +54,7 @@ mkdir ~/.pigeon
 pigeon evm keys generate-new ~/.pigeon/keys/evm/eth-main
 ```
 
-or import existing you existing Ethereum evm private keys 
+or import existing you existing Ethereum evm private keys
 
 ```
 pigeon evm keys import ~/.pigeon/keys/evm/eth-main
@@ -68,7 +68,7 @@ Make sure your Paloma Cosmos-SDK keys are stored and available on your environme
 
 Set the VALIDATOR env variable
 
-`export VALIDATOR="$(palomad keys list --list-names | head -n1)"`
+`export VALIDATOR="$(palomad keys list --output json | jq -r '.[0].address')"`
 
 Create configuration file here `~/.pigeon/config.yaml`
 
